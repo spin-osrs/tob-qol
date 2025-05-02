@@ -367,13 +367,13 @@ public interface TheatreQOLConfig extends Config
 		return false;
 	}
 
-	
+
 	@ConfigItem(
 		name = "Hide Tank",
 		keyName = "hideBloatTank",
 		description = "- Hides the chamber in the center of the Bloat room<br>" +
 						"* Disabling this feature whilst in Bloat will cause a stutter to refresh the scene",
-		position = 3
+		position = 3,
 		section = BLOAT_SECTION
 	)
 	default boolean shouldNullBloatTank()

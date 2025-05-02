@@ -253,8 +253,8 @@ public class BloatHandler extends RoomHandler
 
 	private void nullBloatTank()
 	{
-		sceneManager.removeTheseGameObjects(1, BloatTable.TANK);
-		sceneManager.removeTheseGameObjects(1, BloatTable.TOP_OF_TANK)
+		sceneManager.removeTheseGameObjects(client.getPlane(), BloatTable.TANK);
+		sceneManager.removeTheseGameObjects(1, BloatTable.TOP_OF_TANK);
 	}
 
 	private void buildInfobox()

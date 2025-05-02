@@ -353,6 +353,7 @@ public interface TheatreQOLConfig extends Config
 		return false;
 	}
 
+
 	@ConfigItem(
 			name = "Track Downs in Chat/Infobox",
 			keyName = "trackDowns",
@@ -362,6 +363,20 @@ public interface TheatreQOLConfig extends Config
 			section = BLOAT_SECTION
 	)
 	default boolean trackDowns()
+	{
+		return false;
+	}
+
+	
+	@ConfigItem(
+		name = "Hide Tank",
+		keyName = "hideBloatTank",
+		description = "- Hides the chamber in the center of the Bloat room<br>" +
+						"* Disabling this feature whilst in Bloat will cause a stutter to refresh the scene",
+		position = 3
+		section = BLOAT_SECTION
+	)
+	default boolean shouldNullBloatTank()
 	{
 		return false;
 	}

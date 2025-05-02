@@ -123,6 +123,10 @@ public class BloatHandler extends RoomHandler
 			case "hideCeilingChains":
 				when(config.shouldNullCeilingChains(), this::nullCeilingChains, sceneManager::refreshScene);
 				break;
+			
+			case "hideBloatTank":
+				when(config.shouldNullBloatTank(), this::nullBloatTank, sceneManager::refreshScene);
+				break;
 		}
 	}
 
@@ -135,6 +139,7 @@ public class BloatHandler extends RoomHandler
 		}
 
 		when(config.shouldNullCeilingChains(), this::nullCeilingChains, null);
+		when(config.shouldNullBloatTank(), this::nullBloatTank, null);
 	}
 
 	@Subscribe
@@ -152,6 +157,7 @@ public class BloatHandler extends RoomHandler
 		});
 
 		when(config.shouldNullCeilingChains(), this::nullCeilingChains, null);
+		when(config.shouldNullBloatTank(), this::nullBloatTank, null);
 	}
 
 	@Subscribe
@@ -243,6 +249,12 @@ public class BloatHandler extends RoomHandler
 	private void nullCeilingChains()
 	{
 		sceneManager.removeTheseGameObjects(1, BloatTable.CEILING_CHAINS);
+	}
+
+	private void nullBloatTank()
+	{
+		sceneManager.removeTheseGameObjects(1, BloatTable.TANK);
+		sceneManager.removeTheseGameObjects(1, BloatTable.TOP_OF_TANK)
 	}
 
 	private void buildInfobox()
